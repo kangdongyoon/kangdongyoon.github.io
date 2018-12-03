@@ -1,0 +1,150 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>VISUAL COMMUNICATION</title>
+<script src="http://code.jquery.com/jquery.min.js"></script>
+<style>
+
+*{list-style:none; margin:0; padding:0;}
+
+	
+#section01{
+	width:100%; height:1400px; background:#fff url(img/00.jpg) top center no-repeat;}
+
+	
+#section02{
+	width:100%; height:3800px; background:#fff url(img/22.jpg) top center no-repeat;}
+	
+#section03{
+	width:100%; height:5600px; background:#fff url(img/33_1.jpg) top center no-repeat;}
+	
+#section04{
+	width:100%; height:3500px; background:#fff url(img/44.jpg) top center no-repeat;}
+	
+#section05{
+	width:100%; height:5800px; background:#fff url(img/55.jpg) top center no-repeat;}
+
+#section06{
+	width:100%; height:4300px; background:#fff url(img/66.jpg) top center no-repeat;}
+	
+/*#section07{
+	width:100%; height:4300px; background:#fff url(img/77.jpg) top center no-repeat;}*/
+	
+#section08{
+	width:100%; height:8150px; background:#fff url(img/88.jpg) top center no-repeat;}
+	
+#section09{
+	width:100%; height:3900px; background:#fff url(img/99.jpg) top center no-repeat;}
+
+#section10{
+	width:100%; height:10000px; background:#fff url(img/999.jpg) top center no-repeat;}
+	
+	
+	
+.menu_box{
+	width:100%; height:90px; color:#FFF; position:fixed; transition:all 0.5s ease-in-out; -webkit-transition:all 0.5s ease-in-out;}
+	
+	.fixed{
+		background:rgba(0,0,0,0.5); transition:all 0.5s ease-in-out; -webkit-transition:all 0.5s ease-in-out;}
+	
+		.logo a{
+			font-size:46px; padding:15px 0 0 35px; float:left; color:#FFF; font-family: 'Open Sans',Arial,Helvetica,sans-serif; text-decoration:none;}
+			
+		.menu_box > ul{
+			float:right; padding:0 35px 0 0;}
+			
+			.menu_box li{
+				float:left; text-align:center; width:100px; }
+				
+				.menu_box li a{
+					text-decoration:none; color:#444; line-height:100px; font-family: 'Open Sans',Arial,Helvetica,sans-serif; font-size:14px;}
+					
+					/**메뉴 솔리드 색변경**/
+					.menu_box li a:hover{
+						border-top:2px solid #999; padding-top:40px; color:#CCC;}
+						
+					.menu_box li:nth-child(2) a:hover{
+						border-top:2px solid #999; padding-top:40px; color:#CCC;}
+						
+					.menu_box li:nth-child(3) a:hover{
+						border-top:2px solid #999; padding-top:40px; color:#CCC;}
+						
+					.menu_box li:nth-child(4) a:hover{
+						border-top:2px solid #999; padding-top:40px; color:#CCC;}
+						
+					.menu_box li:nth-child(5) a:hover{
+						border-top:2px solid #999; padding-top:40px; color:#CCC;}
+						
+					.menu_box li:nth-child(6) a:hover{
+						border-top:2px solid #999; padding-top:40px; color:#CCC;}
+						
+					/*.menu_box li:nth-child(7) a:hover{
+						border-top:2px solid #999; padding-top:40px; color:#CCC;}*/
+					
+					.menu_box li:nth-child(8) a:hover{
+						border-top:2px solid #999; padding-top:40px; color:#CCC;}
+						
+					.menu_box li:nth-child(9) a:hover{
+						border-top:2px solid #999; padding-top:40px; color:#CCC;}
+
+					.menu_box li:nth-child(10) a:hover{
+						border-top:2px solid #999; padding-top:40px; color:#CCC;}
+</style>
+
+</head>
+
+<body>
+<div id="section01">
+    <div class="menu_box">
+        <div class="logo"><a href="#section01"><img src="img/mainlogo.png" width="22%" alt=""/></a></div>
+        <ul>
+            <li><a href="#section01">Home</a></li>
+            <li><a href="#section02">서체꼴이야기</a></li>
+            <li><a href="#section03">사이사이</a></li>
+            <li><a href="#section04">크기와무게</a></li>
+            <li><a href="#section05">질감의멋</a></li>
+            <li><a href="#section06">질감의멋</a></li>
+            <li><a href="#section08">기본.감각</a></li>
+            <li><a href="#section09">그이상의미</a></li>
+            <li><a href="#section10">실사의위력</a></li>
+        </ul>
+    </div>
+</div>
+
+<div id="section02"></div>
+<div id="section03"></div>
+<div id="section04"></div>
+<div id="section05"></div>
+<div id="section06"></div>
+<div id="section08"></div>
+<div id="section09"></div>
+<div id="section10"></div>
+<script>
+	/**내가 설정한거 높이 선택하는 코드**/
+	if (jQuery(window).width() > 0) {
+    jQuery(window).on("scroll",function(ev){
+        if(jQuery(window).scrollTop() > 150 ) { /**높이 픽셀 조정하귀 털ㄴ업**/
+            jQuery('.menu_box').addClass('fixed');  /**위 높이 fixed 수정 스타일에서 조정가능 헬나 워- 워- 털ㄴ업.**/
+        }
+        else{
+			jQuery('.menu_box').removeClass('fixed');
+        }
+        return false;
+    });
+	}
+	
+	/**마우스 슥~슥~ 해당위치로 느낌있게 상이동**/
+	$(function(){
+	   $('a[href^=#]').click(function() {
+		  var speed = 800;
+		  var href= $(this).attr("href");
+		  var target = $(href == "#" || href == "" ? 'html' : href);
+		  var position = target.offset().top;
+		  $('body,html').animate({scrollTop:position}, speed, 'swing');
+		  return false;
+	   });
+	});
+</script>
+</body>
+</html>
